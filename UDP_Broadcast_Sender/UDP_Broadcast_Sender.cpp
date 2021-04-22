@@ -43,7 +43,7 @@ int main()
 
     Recv_addr.sin_family = AF_INET;
     Recv_addr.sin_port = htons(MYPORT);
-    Recv_addr.sin_addr.s_addr  = INADDR_BROADCAST; // this isq equiv to 255.255.255.255
+    Recv_addr.sin_addr.s_addr = INADDR_BROADCAST; // this isq equiv to 255.255.255.255
     // better use subnet broadcast (for our subnet is 172.30.255.255)
     //Recv_addr.sin_addr.s_addr = inet_addr("255.255.255.255");
 
