@@ -35,7 +35,6 @@ int main()
     }
 
     struct sockaddr_in Recv_addr;
-    struct sockaddr_in Sender_addr;
 
     int len = sizeof(struct sockaddr_in);
     
@@ -69,13 +68,13 @@ int main()
         return 0;
     }
 
-    recvfrom(sock, recvbuff, recvbufflen, 0, (sockaddr*)&Sender_addr, &len);
+    recvfrom(sock, recvbuff, recvbufflen, 0, (sockaddr*)&Recv_addr, &len);
 
     cout << "\n\n\tReceived Message is : " << recvbuff;
     cout << "\n\n\tPress Any to send message";
     _getch();
 
-    if (sendto(sock, sendMSG, strlen(sendMSG) + 1, 0, (sockaddr*)&Sender_addr, sizeof(Sender_addr)) < 0)
+    if (sendto(sock, sendMSG, strlen(sendMSG) + 1, 0, (sockaddr*)&Recv_addr, sizeof(Recv_addr)) < 0)
     {
         cout << "Error in Sending." << WSAGetLastError();
         cout << "\n\n\t\t Press any key to continue....";

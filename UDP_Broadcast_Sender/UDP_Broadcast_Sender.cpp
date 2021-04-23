@@ -32,7 +32,6 @@ int main()
     }
 
     struct sockaddr_in Recv_addr;
-    struct sockaddr_in Sender_addr;
 
     int len = sizeof(struct sockaddr_in);
 
